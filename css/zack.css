@@ -9,6 +9,7 @@ html {
 }
 body {
   font-family: "Cairo", sans-serif;
+  background-color: #f5f5f5;
 }
 a {
   text-decoration: none;
@@ -112,13 +113,14 @@ ul {
 .header .main-nav > li > a:hover::before {
   left: 0;
 }
-/* landing section */
+/* landing section 
 .landing {
   background-image: url(../img/2386836.jpg);
   background-size: cover;
   height: calc(100vh - 80px);
   position: relative;
-}
+} */
+
 .landing .intro-text {
   position: absolute;
   left: 50%;
@@ -128,6 +130,7 @@ ul {
   width: 320px;
   max-width: 100%;
 }
+
 .landing .intro-text span {
   font-size: 45px;
   color: black;
@@ -136,7 +139,8 @@ ul {
   font-size: 35px;
   line-height: 1.8;
   color: #E02432;
-}
+} 
+
 #particles-js{
   background:transparent;
   height: 100%;
@@ -512,20 +516,56 @@ ul {
     width: 70%;
   }
 }
-
-
-
 /* End Skills */
+/* Start Contact */
+.contact {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: transparent;
+  background-image: url(../img/2386836.jpg);
+  background-size: cover;
+  height: calc(100vh - 80px);
+  position: relative;
+}
+.contact .special-heading {
+  color: #E02432;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 10px;
+}
+.abdo{
+  color: black;
+  text-align: center;
+  text-decoration: underline;
+  font-family: Courier New;
+}
+.contact .info {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.contact .info .label {
+  font-size: 35px;
+  font-weight: 800;
+  color: black;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+.contact .info .link {
+  display: block;
+  font-size: 35px;
+  font-weight: 800;
+  color: black;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .contact .info .label,
+  .contact .info .link {
+    font-size: 15px;
+  }
+}
 /*Start Footer*/
-.footer {
-  padding-top: 150px;
-  padding-bottom: 10px;
-  
-}
-#zack-js{
-  background:transparent;
-  height: 100%;
-}
 .footer .social{
   text-align: center;
   padding-bottom : 25px;
