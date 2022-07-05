@@ -108,7 +108,7 @@ ul {
 }
 .header .main-nav > li > a:hover {
   color: #E02432;
-  background-color: #fafafa;
+  background-color: #f5f5f5;
 }
 .header .main-nav > li > a:hover::before {
   left: 0;
@@ -226,6 +226,7 @@ ul {
 .services {
   padding-top: 60px;
   padding-bottom: 60px;
+  background-color: white;
 }
 .services .special-heading {
   color: #E02432;
@@ -233,46 +234,132 @@ ul {
   font-size: 40px;
   letter-spacing: 10px;
 }
-.services .container .ser {
-  color: black;
-  text-align: center;
-  text-decoration: underline;
-  font-family: Courier New;
-}
-.services .services-content {
-  display: block;
+.services .container {
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 30px;
-  margin-top: 50px;
+  gap: 40px;
 }
-.services .services-content .srv {
-  display: block;
-  margin-bottom: 20px;
+.services .box {
   text-align: center;
+  border: 1px solid #ccc;
 }
-@media (max-width: 767px) {
-  .services .services-content .srv {
-    flex-direction: column;
-    text-align: center;
-  }
+.services .box .img-holder {
+  position: relative;
+  overflow: hidden;
 }
-.services .services-content .srv i {
-  color: #E02432;
-  flex-basis: 60px;
+.services .box .img-holder::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
+  height: 100%;
 }
-.services .services-content .srv .text {
-  flex: 1;
+.services .box .img-holder::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0px 0px 170px 500px;
+  border-color: transparent transparent white transparent;
+  transition: 0.3s;
 }
-.services .services-content .srv .text h3 {
-  margin: 0 0 10px;
+.services .box .img-holder img {
+  max-width: 100%;
 }
-.services .services-content .srv .text p {
-  color: #444;
-  line-height: 1.6;
-  font-size: 17px;
-   
+.services .box:hover .img-holder::after {
+  border-width: 170px 500px 170px 0;
 }
-/* End Services  */
+.services .box h2 {
+  position: relative;
+  font-size: 40px;
+  margin: 30px;
+  width: fit-content;
+}
+.services .box h2::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 15px;
+  height: 5px;
+  width: calc(100% - 30px);
+}
+.services .box p {
+  line-height: 2;
+  font-size: 20px;
+  margin: 30px 0;
+  padding: 25px;
+  color: #777;
+}
+.services .box a {
+  display: block;
+  justify-items: center;
+  border: 3px solid transparent;
+  width: fit-content;
+  margin: 0 auto 30px;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 10px 30px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.services .quality h2{
+  padding: 20px;
+}
+.services .quality .img-holder::before {
+  background-color: rgb(244 64 54 / 60%);
+}
+.services .quality h2::after {
+  background-color: #f44036;
+}
+.services .quality a {
+  color: #f44036;
+  border-color: #f44036;
+  background: linear-gradient(to right, #f44036 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.services .time h2{
+  padding: 35px;
+}
+.services .time .img-holder::before {
+  background-color: rgb(68 68 68 / 60%);
+}
+.services .time h2::after {
+  background-color: black;
+}
+.services .time a {
+  color: black;
+  border-color:black;
+  background: linear-gradient(to right, #444 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.services .passion h2{
+  padding: 30px;
+}
+.services .passion .img-holder::before {
+  background-color: rgb(244 64 54 / 60%);
+}
+.services .passion h2::after {
+  background-color: #f44036;
+}
+.services .passion a {
+  color: #f44036;
+  border-color: #f44036;
+  background: linear-gradient(to right, #f44036 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.services .box:hover a {
+  background-position: left bottom;
+  color: white;
+}
+/*End Services */
 /* Start About */
 .about {
   padding-top: 60px;
@@ -593,7 +680,7 @@ ul {
   text-align: center;
 }
 .contact .info .label {
-  font-size: 35px;
+  font-size: 55px;
   font-weight: 800;
   color: black;
   letter-spacing: -2px;
@@ -610,7 +697,8 @@ ul {
 @media (max-width: 767px) {
   .contact .info .label,
   .contact .info .link {
-    font-size: 15px;
+    font-size: 20px;
+    text-align: center;
   }
 }
 /*Start Footer*/
@@ -715,11 +803,22 @@ ul {
     right: 0;
     border-radius: 0;
     width: 50%;
-    height: 100%;
+    height: 00%;
   }
 }
 @keyframes moving-arrow {
   100% {
     transform: translateX(10px);
+  }
+}
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
   }
 }
